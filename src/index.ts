@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/api-data">API Data</a>
+          <a href="/Class">Class</a>
           <a href="/healthz">Health</a>
         </nav>
         <h1>Welcome to Express on Vercel 🚀</h1>
@@ -41,6 +42,13 @@ app.get('/api-data', (req, res) => {
   res.json({
     message: 'Here is some sample API data',
     items: ['apple', 'banana', 'cherry'],
+  })
+})
+
+app.get('/Class', (req, res) => {
+  res.json({
+    message: 'Nombre de la primera mesa del salon',
+    items: ['Sergio', 'Monica', 'Fernando'],
   })
 })
 
