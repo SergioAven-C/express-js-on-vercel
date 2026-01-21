@@ -54,7 +54,7 @@ app.get('/Class', (req, res) => {
 })
 
 app.get("/usuarios", async (req, res) => {
-  const { rows } = await pool.query("SELECT * FROM usuarios");
+  const { rows } = await pool.query('SELECT * FROM public."Info personal"'); 
   res.json(rows);
 })
 
