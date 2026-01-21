@@ -1,6 +1,7 @@
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { pool } from './db.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -50,6 +51,11 @@ app.get('/Class', (req, res) => {
     message: 'Nombre de la primera mesa del salon',
     items: ['Sergio', 'Monica', 'Fernando'],
   })
+})
+
+app.get("/usuarios", async (req, res) => {
+  const { rows } = await pool.query("SELECT * FROM usuarios");
+  res.json(rows);
 })
 
 // Health check
